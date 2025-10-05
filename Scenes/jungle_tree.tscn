@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bib6mv0daee3d"]
+
+[ext_resource type="Texture2D" uid="uid://cruvlaolxai4t" path="res://Sprites/Environment/Trees/JungleTree_outline.png" id="1_xo8em"]
+
+[node name="JungleTree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xo8em")

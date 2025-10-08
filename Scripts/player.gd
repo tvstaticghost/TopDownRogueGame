@@ -28,6 +28,9 @@ var target_rotation: float = 0.0
 
 var previously_aiming: bool = false
 
+var current_rotation = rotation_degrees
+var current_rotation_set: bool = false
+
 func _ready() -> void:
 	crouched = false
 	can_walk = true
@@ -102,6 +105,16 @@ func get_input():
 		else:
 			animated_sprite_2d.play("idle")
 		walking = false
+		
+func aim_rotate():
+	look_at(get_global_mouse_position())
+	rotation += PI/2
+	
+	print(rotation_degrees)
+	if rotation_degrees < current_rotation - 45:
+		rotation_degrees = current_rotation - 45
+	if rotation_degrees > current_rotation + 45:
+		rotation_degrees = current_rotation + 45
 
 func _process(_delta: float) -> void:
 	if transitioning:
@@ -128,6 +141,12 @@ func _process(_delta: float) -> void:
 			fire_arrow()
 			transitioning = true
 			firing_arrow = true
+			
+	if aiming:
+		if not current_rotation_set:
+			current_rotation = rotation_degrees
+			current_rotation_set = true
+		aim_rotate()
 	
 func _physics_process(delta: float) -> void:
 	movement_direction = Vector2.ZERO
@@ -137,10 +156,17 @@ func _physics_process(delta: float) -> void:
 		get_input()
 		move_and_slide()
 
+#func fire_arrow():
+	#var arrow = standard_arrow.instantiate()
+	#arrow.position = arrow_firing_point.global_position
+	#arrow.rotation = target_rotation
+	#get_tree().current_scene.add_child(arrow)
+	
 func fire_arrow():
 	var arrow = standard_arrow.instantiate()
 	arrow.position = arrow_firing_point.global_position
-	arrow.rotation = target_rotation
+	arrow.rotation = rotation  # or target_rotation
+	arrow.direction = Vector2(cos(arrow.rotation - PI/2), sin(arrow.rotation - PI/2)).normalized()
 	get_tree().current_scene.add_child(arrow)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -157,4 +183,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		
 	if firing_arrow:
 		firing_arrow = false
+		current_rotation_set = false
 	print("crouch animation finished")

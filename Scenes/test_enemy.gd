@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var enemy_visuals: Sprite2D = $EnemyVisuals
+@onready var enemy_visuals: AnimatedSprite2D = $EnemyVisuals
 @onready var player
 
 enum enemy_states {PATROL, CHASE, ATTACK, INVESTIGATE}

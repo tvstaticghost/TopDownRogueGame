@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://gwgtgqsar8ac"]
+
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_wqkje"]
+[ext_resource type="PackedScene" uid="uid://bn06n1k6gqi4i" path="res://Scenes/rock_cluster_3.tscn" id="6_0f350"]
+[ext_resource type="PackedScene" uid="uid://bib6mv0daee3d" path="res://Scenes/jungle_tree.tscn" id="77_yv4qw"]
+[ext_resource type="PackedScene" uid="uid://vhtap5c0sggj" path="res://Scenes/old_tree.tscn" id="78_vl2iv"]
+[ext_resource type="PackedScene" uid="uid://61vh3ic7cja2" path="res://Scenes/ground_tile_map.tscn" id="79_o16m1"]
+[ext_resource type="PackedScene" uid="uid://bh88nwrpvlxfm" path="res://Scenes/big_rock_2.tscn" id="80_e3hal"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wqkje")]
+position = Vector2(500, 300)
+
+[node name="JungleTree" parent="." instance=ExtResource("77_yv4qw")]
+position = Vector2(792, 369)
+
+[node name="OldTree" parent="." instance=ExtResource("78_vl2iv")]
+position = Vector2(233, 246)
+
+[node name="GroundTileMap" parent="." instance=ExtResource("79_o16m1")]
+position = Vector2(-178, -64)
+noise_scalar = 0.24
+
+[node name="BigRock2" parent="." instance=ExtResource("80_e3hal")]
+position = Vector2(675, 70)
+
+[node name="RockCluster3" parent="." instance=ExtResource("6_0f350")]
+position = Vector2(478, 181)

@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://gwgtgqsar8ac"]
+
+[ext_resource type="Script" uid="uid://hldnn541o57x" path="res://Scripts/forest_map.gd" id="1_754fn"]
+[ext_resource type="PackedScene" uid="uid://6n24mvh65b57" path="res://Scenes/player.tscn" id="1_wqkje"]
+[ext_resource type="PackedScene" uid="uid://bn06n1k6gqi4i" path="res://Scenes/rock_cluster_3.tscn" id="6_0f350"]
+[ext_resource type="PackedScene" uid="uid://c2xx4xv1oonty" path="res://Scenes/cabin.tscn" id="7_8c0lf"]
+[ext_resource type="AudioStream" uid="uid://bht54m8q44lmj" path="res://Sounds/forest-wind-with-birds-singing-364368.mp3" id="9_bvt00"]
+[ext_resource type="PackedScene" uid="uid://vrvb5uhud4pi" path="res://Scenes/test_enemy.tscn" id="10_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://bib6mv0daee3d" path="res://Scenes/jungle_tree.tscn" id="77_yv4qw"]
+[ext_resource type="PackedScene" uid="uid://vhtap5c0sggj" path="res://Scenes/old_tree.tscn" id="78_vl2iv"]
+[ext_resource type="PackedScene" uid="uid://61vh3ic7cja2" path="res://Scenes/ground_tile_map.tscn" id="79_o16m1"]
+[ext_resource type="PackedScene" uid="uid://bh88nwrpvlxfm" path="res://Scenes/big_rock_2.tscn" id="80_e3hal"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_754fn")
+
+[node name="Player" parent="." instance=ExtResource("1_wqkje")]
+position = Vector2(500, 300)
+
+[node name="JungleTree" parent="." instance=ExtResource("77_yv4qw")]
+position = Vector2(792, 369)
+
+[node name="OldTree" parent="." instance=ExtResource("78_vl2iv")]
+position = Vector2(233, 246)
+
+[node name="GroundTileMap" parent="." instance=ExtResource("79_o16m1")]
+position = Vector2(-178, -64)
+noise_scalar = 0.24
+
+[node name="BigRock2" parent="." instance=ExtResource("80_e3hal")]
+position = Vector2(675, 70)
+
+[node name="RockCluster3" parent="." instance=ExtResource("6_0f350")]
+position = Vector2(478, 181)
+
+[node name="Cabin" parent="." instance=ExtResource("7_8c0lf")]
+position = Vector2(396, -336)
+
+[node name="ForestSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_bvt00")
+autoplay = true
+parameters/looping = true
+
+[node name="TestEnemy" parent="." instance=ExtResource("10_oqgf2")]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrvb5uhud4pi"]
+
+[ext_resource type="Script" uid="uid://c1tvvji54sa0d" path="res://Scenes/test_enemy.gd" id="1_bs22l"]
+[ext_resource type="Texture2D" uid="uid://cclsbffkekl0j" path="res://icon.svg" id="1_r1vdb"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bs22l"]
+
+[node name="TestEnemy" type="Node2D"]
+script = ExtResource("1_bs22l")
+
+[node name="EnemyVisuals" type="Sprite2D" parent="."]
+scale = Vector2(0.615, 0.615)
+texture = ExtResource("1_r1vdb")
+
+[node name="FacingDirectionPlaceholder" type="MeshInstance2D" parent="."]
+position = Vector2(0, -38.25)
+scale = Vector2(17, 7.25)
+mesh = SubResource("CylinderMesh_bs22l")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccehagkux68kt"]
+
+[ext_resource type="Texture2D" uid="uid://bsb0oejl6t4xi" path="res://Sprites/Environment/Rocks/BigRock_outline.png" id="1_dg6tv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2j7rc"]
+radius = 21.0518
+height = 69.3029
+
+[node name="BigRock" type="Node2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_dg6tv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -33)
+rotation = 0.958186
+shape = SubResource("CapsuleShape2D_2j7rc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://vrvb5uhud4pi"]
+[gd_scene load_steps=49 format=3 uid="uid://vrvb5uhud4pi"]
 
 [ext_resource type="Script" uid="uid://c1tvvji54sa0d" path="res://Scenes/test_enemy.gd" id="1_bs22l"]
 [ext_resource type="Texture2D" uid="uid://bvq03uvpnftic" path="res://Sprites/Knight/Knight_Idle/0001_outline.png" id="2_ithbu"]
@@ -205,6 +205,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcw26"]
+radius = 210.00952
+
 [node name="TestEnemy" type="Node2D"]
 script = ExtResource("1_bs22l")
 
@@ -215,3 +218,11 @@ animation = &"slash"
 autoplay = "idle"
 frame = 9
 frame_progress = 0.86147803
+
+[node name="HearingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HearingArea"]
+shape = SubResource("CircleShape2D_tcw26")
+
+[connection signal="body_entered" from="HearingArea" to="." method="_on_hearing_area_body_entered"]
+[connection signal="body_exited" from="HearingArea" to="." method="_on_hearing_area_body_exited"]

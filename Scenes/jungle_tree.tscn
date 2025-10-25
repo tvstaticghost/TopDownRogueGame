@@ -9,8 +9,9 @@ shader_parameter/sway_strength = 0.79
 shader_parameter/sway_speed = 1.474
 
 [node name="JungleTree" type="Node2D"]
+z_index = 2
+scale = Vector2(0.35, 0.35)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xurbk")
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_xo8em")

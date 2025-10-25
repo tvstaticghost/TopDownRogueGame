@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cvu6cqyaoeehg" path="res://Sprites/Arrow/Arrow_outline.png" id="2_qj63b"]
 
 [node name="StandardArrow" type="Node2D"]
+scale = Vector2(0.05, 0.05)
 script = ExtResource("1_qj63b")
+speed = 700.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_qj63b")

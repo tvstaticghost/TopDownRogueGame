@@ -426,18 +426,19 @@ animations = [{
 radius = 33.1361
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_wcnj3")
+player_movement_speed = 125.0
+player_crouched_movement_speed = 100.0
 rotation_speed = 10.0
 
 [node name="PlayerLegs" type="AnimatedSprite2D" parent="."]
 visible = false
-scale = Vector2(0.215, 0.215)
 sprite_frames = SubResource("SpriteFrames_ue0p1")
 animation = &"legs_right_turn"
 frame_progress = 0.508282
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.214583, 0.214815)
 sprite_frames = SubResource("SpriteFrames_0f350")
 animation = &"walk"
 autoplay = "idle"
@@ -451,6 +452,7 @@ position = Vector2(5, -5)
 shape = SubResource("CircleShape2D_5o4ln")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.735, 1.735)
 rotation_smoothing_enabled = true
 
 [node name="FireArrow" type="AudioStreamPlayer" parent="."]

@@ -125,6 +125,26 @@ func aim_rotate():
 	var snapped_deg = round(torso_deg / 20.0) * 20.0
 	player_legs.rotation_degrees = snapped_deg
 	
+	var aim_angle = fposmod(animated_sprite_2d.rotation_degrees + 360.0, 360.0)
+	
+	if aim_angle >= 337.5 or aim_angle < 22.5:
+		current_direction = direction.NORTH
+	elif aim_angle < 67.5:
+		current_direction = direction.NORTHEAST
+	elif aim_angle < 112.5:
+		current_direction = direction.EAST
+	elif aim_angle < 157.5:
+		current_direction = direction.SOUTHEAST
+	elif aim_angle < 202.5:
+		current_direction = direction.SOUTH
+	elif aim_angle < 247.5:
+		current_direction = direction.SOUTHWEST
+	elif aim_angle < 292.5:
+		current_direction = direction.WEST
+	else:
+		current_direction = direction.NORTHWEST
+		
+	rotate_player()
 
 func _process(_delta: float) -> void:
 	if transitioning:

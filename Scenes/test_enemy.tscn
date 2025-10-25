@@ -206,16 +206,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6bvdg"]
-radius = 48.010414
+radius = 85.586205
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcw26"]
 radius = 210.00952
 
 [node name="TestEnemy" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_bs22l")
+walking_speed = 80.0
+running_speed = 140.0
+enemy_vision_distance = 200.0
 
 [node name="EnemyVisuals" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.32, 0.32)
 sprite_frames = SubResource("SpriteFrames_drxrn")
 animation = &"idle"
 autoplay = "idle"

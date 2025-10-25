@@ -9,6 +9,8 @@ const ROCK_CLUSTER_2 = preload("res://Scenes/rock_cluster_2.tscn")
 const ROCK_CLUSTER_3 = preload("res://Scenes/rock_cluster_3.tscn")
 
 var cluster_list = [ROCK_CLUSTER, ROCK_CLUSTER_2, ROCK_CLUSTER_3]
+enum patrol_type {TIGHT, MAPWIDE, IDLE}
+var tight_patrol_range = 10
 
 const TILE_SIZE = 16
 const TURNS_TO_MOVE: int = 2 #Maybe adjust
@@ -35,11 +37,34 @@ func test_call(source_pos:Vector2, target_pos: Vector2):
 	var path_to_target = pathfinding_grid.get_point_path(source_pos / TILE_SIZE, target_pos / TILE_SIZE)
 	return path_to_target
 	
-func get_random_target():
-	var rand_int = randi() % 20
-	var cell_pos = tile_map_layer.get_used_cells()[rand_int]
-	var world_pos = tile_map_layer.map_to_local(cell_pos)
-	return world_pos
+func get_random_target(patrol_mode, current_pos): #OHH I can add a parameter for different patrol behavior like a tight patrol, map-wide patrol, just basically idle, etc
+	if patrol_mode == patrol_type.MAPWIDE:
+		var random_cell = tile_map_layer.get_used_cells().pick_random()
+		var world_pos = tile_map_layer.map_to_local(random_cell)
+		return world_pos
+	elif patrol_mode == patrol_type.TIGHT:
+		var current_tile = tile_map_layer.local_to_map(current_pos)
+		var x_min = current_tile.x - tight_patrol_range
+		var y_min = current_tile.y - tight_patrol_range
+		var x_max = current_tile.x + tight_patrol_range
+		var y_max = current_tile.y + tight_patrol_range
+		
+		if x_min < tile_map_layer.get_used_cells()[0][0]:
+			x_min = tile_map_layer.get_used_cells()[0][0]
+		if x_max > tile_map_layer.get_used_cells()[-1][0]:
+			x_max = tile_map_layer.get_used_cells()[-1][0]
+		if y_min < tile_map_layer.get_used_cells()[0][1]:
+			y_min = tile_map_layer.get_used_cells()[0][1]
+		if y_max > tile_map_layer.get_used_cells()[-1][1]:
+			y_max = tile_map_layer.get_used_cells()[-1][1]
+		
+		var random_x = randi_range(x_min, x_max)
+		var random_y = randi_range(y_min, y_max)
+		var world_pos = tile_map_layer.map_to_local(Vector2i(random_x, random_y))
+		
+		return world_pos
+	else:
+		print('Invalid type bitch')
 
 func _ready() -> void:
 	rng.seed = 100
@@ -48,9 +73,18 @@ func _ready() -> void:
 	
 	pathfinding_grid.region = tile_map_layer.get_used_rect()
 	pathfinding_grid.cell_size = Vector2(TILE_SIZE, TILE_SIZE)
-	pathfinding_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_AT_LEAST_ONE_WALKABLE #Maybe change this later
+	pathfinding_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ALWAYS #Maybe change this later
 	pathfinding_grid.update()
+	
+	#print(tile_map_layer.get_used_rect())
+	#print(tile_map_layer.get_used_cells())
 	
 	#This functionality disables certain points
 	#for cell in tile_map_layer.get_used_cells():
 		#pathfinding_grid.set_point_solid(cell, true)
+		
+func _process(_delta: float) -> void:
+	var player = get_tree().get_first_node_in_group("Player")
+	var local_pos = tile_map_layer.to_local(player.global_position)
+	var map_pos = tile_map_layer.local_to_map(local_pos)
+	print(map_pos)

@@ -174,9 +174,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_krkim")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -214,19 +214,22 @@ script = ExtResource("1_n3fn1")
 
 [node name="EnemyVisuals" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yvf1c")
-animation = &"idle"
+animation = &"slash"
 autoplay = "idle"
+frame = 7
+frame_progress = 0.62220156
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_37tg3")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 40.0
 path_postprocessing = 1
 debug_enabled = true
 
 [node name="NavTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
-autostart = true
 
+[connection signal="animation_finished" from="EnemyVisuals" to="." method="_on_enemy_visuals_animation_finished"]
 [connection signal="timeout" from="NavTimer" to="." method="_on_nav_timer_timeout"]

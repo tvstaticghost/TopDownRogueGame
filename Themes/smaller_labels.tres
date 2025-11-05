@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bkxannol2n4h"]
+
+[ext_resource type="FontFile" uid="uid://dkdm26yo1f4kq" path="res://Fonts/MedievalSharp-Regular.ttf" id="1_p3mjg"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 21
+Label/fonts/font = ExtResource("1_p3mjg")

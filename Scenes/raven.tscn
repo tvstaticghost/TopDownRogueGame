@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bks4jvnb6eqcj"]
+
+[ext_resource type="Texture2D" uid="uid://cclsbffkekl0j" path="res://icon.svg" id="1_ch86h"]
+[ext_resource type="Script" uid="uid://1w3ar84maby3" path="res://Scripts/raven.gd" id="1_ekc5w"]
+
+[node name="Raven" type="Node2D"]
+z_index = 5
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_ekc5w")
+
+[node name="RavenVisuals" type="Sprite2D" parent="."]
+texture = ExtResource("1_ch86h")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

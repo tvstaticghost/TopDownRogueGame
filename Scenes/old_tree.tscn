@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://vhtap5c0sggj"]
+
+[ext_resource type="Texture2D" uid="uid://ckegy8ywvkpxc" path="res://Sprites/Environment/Trees/OldTree_outline.png" id="1_6boed"]
+[ext_resource type="Shader" uid="uid://d0yvcgwngfwoc" path="res://Shaders/old_tree.gdshader" id="1_jjm04"]
+[ext_resource type="Texture2D" uid="uid://dhxmaoocc1and" path="res://Sprites/Environment/Trees/old_tree_mask.png" id="2_0fpea"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fpea"]
+shader = ExtResource("1_jjm04")
+shader_parameter/sway_strength = 0.79
+shader_parameter/sway_speed = 1.474
+shader_parameter/sway_mask = ExtResource("2_0fpea")
+
+[node name="OldTree" type="Node2D"]
+z_index = 2
+scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0fpea")
+texture = ExtResource("1_6boed")

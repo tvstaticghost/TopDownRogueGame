@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnqx5mww83awj"]
+
+[ext_resource type="Texture2D" uid="uid://dx3wiav75wt1q" path="res://Sprites/Environment/Rocks/RockCluster2_outline.png" id="1_njrxe"]
+
+[node name="RockCluster2" type="Node2D"]
+scale = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_njrxe")

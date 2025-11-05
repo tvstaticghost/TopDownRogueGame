@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://gwgtgqsar8ac"]
+
+[ext_resource type="Script" uid="uid://hldnn541o57x" path="res://Scripts/forest_map.gd" id="1_754fn"]
+[ext_resource type="PackedScene" uid="uid://6n24mvh65b57" path="res://Scenes/player.tscn" id="1_wqkje"]
+[ext_resource type="PackedScene" uid="uid://bn06n1k6gqi4i" path="res://Scenes/rock_cluster_3.tscn" id="6_0f350"]
+[ext_resource type="PackedScene" uid="uid://b44g5fh1jvpdn" path="res://Scenes/test_enemy_2.tscn" id="9_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://ct4ra8bvwrrff" path="res://Scenes/castle_test.tscn" id="10_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://p6mxnqjvsel7" path="res://Scenes/audio_manager.tscn" id="10_qxfql"]
+[ext_resource type="PackedScene" uid="uid://benmxr28o7676" path="res://Scenes/in_game_menu.tscn" id="11_qxfql"]
+[ext_resource type="PackedScene" uid="uid://ddnla1pgm16h5" path="res://Scenes/area_test.tscn" id="12_ha31o"]
+[ext_resource type="PackedScene" uid="uid://bib6mv0daee3d" path="res://Scenes/jungle_tree.tscn" id="77_yv4qw"]
+[ext_resource type="PackedScene" uid="uid://vhtap5c0sggj" path="res://Scenes/old_tree.tscn" id="78_vl2iv"]
+[ext_resource type="PackedScene" uid="uid://61vh3ic7cja2" path="res://Scenes/ground_tile_map.tscn" id="79_o16m1"]
+[ext_resource type="PackedScene" uid="uid://bh88nwrpvlxfm" path="res://Scenes/big_rock_2.tscn" id="80_e3hal"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bvt00"]
+vertices = PackedVector2Array(1159, -58.03125, 1159, 737.9922, 672.3906, 86.39844, 669.40625, 76.47656, 670.0078, 96.5, 662.89844, 104.03125, -59.09375, 737, 652.97656, 107.00781, -65.953125, -15.5234375, 644.21875, 104.9375, 625.7969, 95.02344, 619.25, 88.85156, -13.2421875, -61.976563, 616.28906, 78.92969, 618.64844, 68.85156, 662.8594, 70.3125, 625.7578, 61.296875, 644.46094, 60.398438, 635.7031, 58.320313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1), PackedInt32Array(5, 4, 1), PackedInt32Array(5, 1, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 9, 8), PackedInt32Array(11, 10, 8, 12), PackedInt32Array(13, 11, 12), PackedInt32Array(14, 13, 12), PackedInt32Array(0, 3, 15), PackedInt32Array(16, 14, 12), PackedInt32Array(0, 15, 17), PackedInt32Array(18, 16, 12), PackedInt32Array(18, 12, 0), PackedInt32Array(18, 0, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -20, -69, 747, 1169, 748, 1169, -68, -17, -72)])
+
+[sub_resource type="Environment" id="Environment_oqgf2"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.24
+
+[node name="ForestLevel" type="Node2D" groups=["Level"]]
+script = ExtResource("1_754fn")
+
+[node name="AudioManager" parent="." instance=ExtResource("10_qxfql")]
+process_mode = 3
+
+[node name="CastleTest" parent="." instance=ExtResource("10_oqgf2")]
+position = Vector2(1176, 86)
+
+[node name="Player" parent="." instance=ExtResource("1_wqkje")]
+position = Vector2(11.000008, 146)
+
+[node name="JungleTree" parent="." instance=ExtResource("77_yv4qw")]
+position = Vector2(792, 369)
+
+[node name="OldTree" parent="." instance=ExtResource("78_vl2iv")]
+position = Vector2(233, 246)
+
+[node name="GroundTileMap" parent="." groups=["GroundTileMap"] instance=ExtResource("79_o16m1")]
+noise_scalar = 0.24
+
+[node name="RockCluster3" parent="." instance=ExtResource("6_0f350")]
+position = Vector2(478, 181)
+
+[node name="test_enemy_2" parent="." instance=ExtResource("9_oqgf2")]
+enemy_patrol_type = 2
+speed_increments = 0.5
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-15, -26)
+navigation_polygon = SubResource("NavigationPolygon_bvt00")
+
+[node name="BigRock2" parent="NavigationRegion2D" instance=ExtResource("80_e3hal")]
+position = Vector2(675, 70)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oqgf2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("11_qxfql")]
+process_mode = 3
+visible = false
+
+[node name="AreaTest" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(-80, 768)
+
+[node name="AreaTest4" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(-56, 264)
+rotation = 1.5707964
+
+[node name="AreaTest5" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(-56, -264)
+rotation = 1.5707964
+
+[node name="AreaTest6" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(448, -160)
+rotation = 3.1415927
+
+[node name="AreaTest7" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(976, -160)
+rotation = 3.1415927
+
+[node name="AreaTest2" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(448, 768)
+
+[node name="AreaTest3" parent="." instance=ExtResource("12_ha31o")]
+position = Vector2(976, 768)
+
+[editable path="AreaTest3"]

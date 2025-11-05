@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bib6mv0daee3d"]
+
+[ext_resource type="Shader" uid="uid://n7v13ro1f1pl" path="res://Shaders/jungle_tree.gdshader" id="1_c21mk"]
+[ext_resource type="Texture2D" uid="uid://cruvlaolxai4t" path="res://Sprites/Environment/Trees/JungleTree_outline.png" id="1_xo8em"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xurbk"]
+shader = ExtResource("1_c21mk")
+shader_parameter/sway_strength = 0.79
+shader_parameter/sway_speed = 1.474
+
+[node name="JungleTree" type="Node2D"]
+z_index = 2
+scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xurbk")
+texture = ExtResource("1_xo8em")

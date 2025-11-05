@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc2xlbe7fwa14"]
+
+[ext_resource type="Texture2D" uid="uid://bqgnnf8c1auhg" path="res://Sprites/Environment/BorderTrees/border_tree3_outline.png" id="1_mx5ps"]
+[ext_resource type="Script" uid="uid://bqrutjg7522dn" path="res://Scripts/border_tree.gd" id="2_4ulex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cq3du"]
+radius = 145.4686
+
+[node name="BorderTree3" type="Sprite2D"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_mx5ps")
+script = ExtResource("2_4ulex")
+
+[node name="FadeArea" type="Area2D" parent="." groups=["Tree"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FadeArea"]
+shape = SubResource("CircleShape2D_cq3du")
+
+[connection signal="body_entered" from="FadeArea" to="." method="_on_fade_area_body_entered"]
+[connection signal="body_exited" from="FadeArea" to="." method="_on_fade_area_body_exited"]

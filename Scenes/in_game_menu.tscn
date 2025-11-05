@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://benmxr28o7676"]
+
+[ext_resource type="Script" uid="uid://bl76vct20kqah" path="res://Scripts/in_game_menu.gd" id="1_2rnyg"]
+[ext_resource type="Texture2D" uid="uid://coq6mrl1hdcn7" path="res://Sprites/Menu/parchment_paper_outline.png" id="1_c42cd"]
+[ext_resource type="Theme" uid="uid://cnc31a0ykdkh1" path="res://Themes/in_game_menu.tres" id="2_5crhr"]
+[ext_resource type="Theme" uid="uid://bkxannol2n4h" path="res://Themes/smaller_labels.tres" id="3_n0mag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rnyg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01cmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1ur8"]
+
+[node name="InGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2rnyg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -320.0
+offset_right = 240.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c42cd")
+expand_mode = 1
+
+[node name="MainContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -20.0
+offset_right = 31.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SettingsButton" type="Button" parent="TextureRect/MainContainer"]
+layout_mode = 2
+theme = ExtResource("2_5crhr")
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2rnyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2rnyg")
+text = "Settings"
+
+[node name="QuitGameButton" type="Button" parent="TextureRect/MainContainer"]
+layout_mode = 2
+theme = ExtResource("2_5crhr")
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_01cmc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01cmc")
+text = "Quit Game"
+
+[node name="SettingsContainer" type="VBoxContainer" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -52.0
+offset_right = 157.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MasterVolumeLabel" type="Label" parent="TextureRect/SettingsContainer"]
+layout_mode = 2
+theme = ExtResource("3_n0mag")
+text = "Master Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="TextureRect/SettingsContainer"]
+layout_mode = 2
+theme = ExtResource("3_n0mag")
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="BrightnessLabel" type="Label" parent="TextureRect/SettingsContainer"]
+layout_mode = 2
+theme = ExtResource("3_n0mag")
+text = "Brightness"
+
+[node name="BrightnessSlider" type="HSlider" parent="TextureRect/SettingsContainer"]
+layout_mode = 2
+theme = ExtResource("3_n0mag")
+value = 50.0
+
+[node name="BackButton" type="Button" parent="TextureRect/SettingsContainer"]
+layout_mode = 2
+theme = ExtResource("2_5crhr")
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_f1ur8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f1ur8")
+text = "Back
+"
+
+[connection signal="pressed" from="TextureRect/MainContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="TextureRect/MainContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[connection signal="drag_ended" from="TextureRect/SettingsContainer/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="TextureRect/SettingsContainer/BackButton" to="." method="_on_back_button_pressed"]

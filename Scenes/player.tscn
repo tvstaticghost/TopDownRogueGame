@@ -1,0 +1,522 @@
+[gd_scene load_steps=103 format=3 uid="uid://6n24mvh65b57"]
+
+[ext_resource type="Script" uid="uid://6tullq33f5eh" path="res://Scripts/player.gd" id="1_wcnj3"]
+[ext_resource type="Texture2D" uid="uid://coynnyfemqh78" path="res://Sprites/PlayerSprites/ArcherStandingAim/0001_outline.png" id="2_jsob3"]
+[ext_resource type="Texture2D" uid="uid://b3m0s6m33hfs3" path="res://Sprites/PlayerSprites/ArcherStandingAim/0005_outline.png" id="3_pg0gw"]
+[ext_resource type="Texture2D" uid="uid://cxmt3nw42yd34" path="res://Sprites/PlayerSprites/ArcherStandingAim/0010_outline.png" id="4_qavoy"]
+[ext_resource type="Texture2D" uid="uid://iqe5ceodpo3f" path="res://Sprites/PlayerSprites/ArcherStandingAim/0015_outline.png" id="5_w4w4b"]
+[ext_resource type="Texture2D" uid="uid://ia0janfgsjo3" path="res://Sprites/PlayerSprites/ArcherStandingAim/0020_outline.png" id="6_h5cax"]
+[ext_resource type="Texture2D" uid="uid://hwyq0ap14o6k" path="res://Sprites/PlayerSprites/ArcherStandingAim/0025_outline.png" id="7_dj0x0"]
+[ext_resource type="Texture2D" uid="uid://b3ntdhlvl7lq7" path="res://Sprites/PlayerSprites/ArcherStandingAim/0030_outline.png" id="8_f1uaf"]
+[ext_resource type="Texture2D" uid="uid://dkgqtij7pa0x8" path="res://Sprites/PlayerSprites/ArcherCrouchIdle/0001_outline.png" id="9_6hq81"]
+[ext_resource type="Texture2D" uid="uid://dd47a4mki2n76" path="res://Sprites/PlayerSprites/ArcherLegsRightTurn/0001_outline.png" id="9_6yrdb"]
+[ext_resource type="Texture2D" uid="uid://c48u3em2at6kj" path="res://Sprites/PlayerSprites/ArcherCrouchIdle/0010_outline.png" id="10_5cld6"]
+[ext_resource type="Texture2D" uid="uid://cgylctpe0bx58" path="res://Sprites/PlayerSprites/ArcherLegsRightTurn/0005_outline.png" id="10_ue0p1"]
+[ext_resource type="Texture2D" uid="uid://gs8mw72g4xai" path="res://Sprites/PlayerSprites/ArcherLegsRightTurn/0010_outline.png" id="11_isbcs"]
+[ext_resource type="Texture2D" uid="uid://dtysbundamjic" path="res://Sprites/PlayerSprites/ArcherCrouchIdle/0020_outline.png" id="11_o736f"]
+[ext_resource type="Texture2D" uid="uid://bd2cn0twiyf7g" path="res://Sprites/PlayerSprites/ArcherLegsRightTurn/0015_outline.png" id="12_142e3"]
+[ext_resource type="Texture2D" uid="uid://tp0wtoabfvmn" path="res://Sprites/PlayerSprites/ArcherCrouchIdle/0030_outline.png" id="12_ketbw"]
+[ext_resource type="Texture2D" uid="uid://cy62ouayf36rf" path="res://Sprites/PlayerSprites/ArcherCrouchIdle/0040_outline.png" id="13_4grkl"]
+[ext_resource type="Texture2D" uid="uid://ck0rnhgi1a0wj" path="res://Sprites/PlayerSprites/ArcherLegsRightTurn/0020_outline.png" id="13_ts2c8"]
+[ext_resource type="Texture2D" uid="uid://20uuctcvo1ew" path="res://Sprites/PlayerSprites/ArcherCrouchIdle/0050_outline.png" id="14_6yrdb"]
+[ext_resource type="Texture2D" uid="uid://bcknwsfeficvs" path="res://Sprites/PlayerSprites/ArcherLegsRightTurn/0025_outline.png" id="14_hcgbs"]
+[ext_resource type="Texture2D" uid="uid://cv5xwc65r2k4t" path="res://Sprites/PlayerSprites/ArcherCrouchShoot/0001_outline.png" id="15_ue0p1"]
+[ext_resource type="Texture2D" uid="uid://e6cfphwg83rq" path="res://Sprites/PlayerSprites/ArcherCrouchShoot/0005_outline.png" id="16_isbcs"]
+[ext_resource type="Texture2D" uid="uid://lfsm3qbjliex" path="res://Sprites/PlayerSprites/ArcherCrouchShoot/0010_outline.png" id="17_142e3"]
+[ext_resource type="Texture2D" uid="uid://fymiml25yjro" path="res://Sprites/PlayerSprites/ArcherCrouchShoot/0015_outline.png" id="18_ts2c8"]
+[ext_resource type="Texture2D" uid="uid://cd2rc8t2exap5" path="res://Sprites/PlayerSprites/ArcherCrouchShoot/0020_outline.png" id="19_hcgbs"]
+[ext_resource type="Texture2D" uid="uid://bdvu4aejg1xiu" path="res://Sprites/PlayerSprites/ArcherCrouchShoot/0025_outline.png" id="20_mpfyg"]
+[ext_resource type="Texture2D" uid="uid://bbraxgqq5o8vg" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0001_outline.png" id="21_un823"]
+[ext_resource type="Texture2D" uid="uid://bp3maxoaar5ru" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0005_outline.png" id="22_aclic"]
+[ext_resource type="Texture2D" uid="uid://b32a5rjuqr8ru" path="res://Sprites/PlayerSprites/ArcherArmUp/0025_outline.png" id="22_ramv3"]
+[ext_resource type="Texture2D" uid="uid://br8dejsjajjxp" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0010_outline.png" id="23_0y64g"]
+[ext_resource type="Texture2D" uid="uid://cmsxvh8evl18o" path="res://Sprites/PlayerSprites/ArcherArmUp/0026_outline.png" id="23_hseb1"]
+[ext_resource type="Texture2D" uid="uid://c7rpgwlqvgpov" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0015_outline.png" id="24_ramv3"]
+[ext_resource type="Texture2D" uid="uid://bom73cw55nabv" path="res://Sprites/PlayerSprites/ArcherArmUp/0027_outline.png" id="24_vinow"]
+[ext_resource type="Texture2D" uid="uid://1wgi818vk0h3" path="res://Sprites/PlayerSprites/ArcherArmUp/0028_outline.png" id="25_awsf5"]
+[ext_resource type="Texture2D" uid="uid://bcf5rlgb2iwoy" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0020_outline.png" id="25_hseb1"]
+[ext_resource type="Texture2D" uid="uid://btqaw5bdb3t6j" path="res://Sprites/PlayerSprites/ArcherArmUp/0029_outline.png" id="26_v84ne"]
+[ext_resource type="Texture2D" uid="uid://d4b6cfh4r4j7m" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0025_outline.png" id="26_vinow"]
+[ext_resource type="Texture2D" uid="uid://cpiatd5cxwucx" path="res://Sprites/PlayerSprites/ArcherArmUp/0030_outline.png" id="27_4pcjl"]
+[ext_resource type="Texture2D" uid="uid://cjws5bbvnnlqu" path="res://Sprites/PlayerSprites/ArcherCrouchToStand/0030_outline.png" id="27_awsf5"]
+[ext_resource type="Texture2D" uid="uid://dmu05db263b3e" path="res://Sprites/PlayerSprites/ArcherArmUp/0031_outline.png" id="28_3ath1"]
+[ext_resource type="Texture2D" uid="uid://dnmmn2gv0l7ba" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0001_outline.png" id="28_v84ne"]
+[ext_resource type="Texture2D" uid="uid://b2dybvnja8k64" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0005_outline.png" id="29_4pcjl"]
+[ext_resource type="Texture2D" uid="uid://mwqv5nrhp836" path="res://Sprites/PlayerSprites/ArcherArmUp/0032_outline.png" id="29_pgf6i"]
+[ext_resource type="Texture2D" uid="uid://ci6ookepp0uu5" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0010_outline.png" id="30_3ath1"]
+[ext_resource type="Texture2D" uid="uid://b76kj6n221u4k" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0015_outline.png" id="31_pgf6i"]
+[ext_resource type="Texture2D" uid="uid://brjr5k4h66103" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0020_outline.png" id="32_bvt37"]
+[ext_resource type="Texture2D" uid="uid://bkdve2hdyik4e" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0025_outline.png" id="33_kt3hj"]
+[ext_resource type="Texture2D" uid="uid://nlpy3tcqojlm" path="res://Sprites/PlayerSprites/ArcherCrouchWalk/0030_outline.png" id="34_2jrev"]
+[ext_resource type="Texture2D" uid="uid://dycdw2l8fygw4" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0001_outline.png" id="35_5j7nw"]
+[ext_resource type="Texture2D" uid="uid://4m6l4lsbbggx" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0005_outline.png" id="36_mrkcr"]
+[ext_resource type="Texture2D" uid="uid://ckug2eltq1m2n" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0010_outline.png" id="37_78kn1"]
+[ext_resource type="Texture2D" uid="uid://dtvn7bf8wjpyx" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0015_outline.png" id="38_nwtn4"]
+[ext_resource type="Texture2D" uid="uid://gv748hdf5gmb" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0020_outline.png" id="39_hl8o5"]
+[ext_resource type="Texture2D" uid="uid://bgrssopceq6e0" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0025_outline.png" id="40_v8gx6"]
+[ext_resource type="Texture2D" uid="uid://ckfdv3hpfxjqw" path="res://Sprites/PlayerSprites/ArcherStandingDraw/0030_outline.png" id="41_vlr8u"]
+[ext_resource type="Texture2D" uid="uid://m7ycchkw83q4" path="res://Sprites/PlayerSprites/ArcherIdle/0001_outline.png" id="42_fip0x"]
+[ext_resource type="Texture2D" uid="uid://spgb1cya7v6i" path="res://Sprites/PlayerSprites/ArcherIdle/0020_outline.png" id="43_4tc2f"]
+[ext_resource type="Texture2D" uid="uid://bh6dd0goyqgkb" path="res://Sprites/PlayerSprites/ArcherIdle/0040_outline.png" id="44_u5w1p"]
+[ext_resource type="Texture2D" uid="uid://0ofxn16y55ku" path="res://Sprites/PlayerSprites/ArcherIdle/0060_outline.png" id="45_fnpki"]
+[ext_resource type="Texture2D" uid="uid://20nruc7ygy77" path="res://Sprites/PlayerSprites/ArcherIdle/0080_outline.png" id="46_14ki3"]
+[ext_resource type="Texture2D" uid="uid://co1b27trgvltm" path="res://Sprites/PlayerSprites/ArcherIdle/0100_outline.png" id="47_uvwc7"]
+[ext_resource type="Texture2D" uid="uid://1vwapd2d0mlm" path="res://Sprites/PlayerSprites/ArcherIdle/0120_outline.png" id="48_t1r1w"]
+[ext_resource type="Texture2D" uid="uid://cqf8dvigkghoj" path="res://Sprites/PlayerSprites/ArcherIdle/0140_outline.png" id="49_s3u64"]
+[ext_resource type="Texture2D" uid="uid://dg6xi2q7513fs" path="res://Sprites/PlayerSprites/ArcherIdle/0160_outline.png" id="50_0cppb"]
+[ext_resource type="Texture2D" uid="uid://ct13hsqd86yf5" path="res://Sprites/PlayerSprites/ArcherIdle/0180_outline.png" id="51_s2qaf"]
+[ext_resource type="Texture2D" uid="uid://6hrx8hqp01jt" path="res://Sprites/PlayerSprites/ArcherIdle/0200_outline.png" id="52_jr4hp"]
+[ext_resource type="Texture2D" uid="uid://cq433kynmqd40" path="res://Sprites/PlayerSprites/ArcherIdle/0220_outline.png" id="53_8h4oy"]
+[ext_resource type="Texture2D" uid="uid://dfcdi7utxlvyp" path="res://Sprites/PlayerSprites/ArcherIdle/0240_outline.png" id="54_x8yfv"]
+[ext_resource type="Texture2D" uid="uid://cleb2pv8mmubj" path="res://Sprites/PlayerSprites/ArcherIdle/0250_outline.png" id="55_sg72k"]
+[ext_resource type="Texture2D" uid="uid://cil205v1rmioc" path="res://Sprites/PlayerSprites/ArcherRightTurn/0001_outline.png" id="56_fjjiw"]
+[ext_resource type="Texture2D" uid="uid://ba305p1cg1t8g" path="res://Sprites/PlayerSprites/ArcherRightTurn/0005_outline.png" id="57_24pht"]
+[ext_resource type="Texture2D" uid="uid://clki7g0vyujl8" path="res://Sprites/PlayerSprites/ArcherRightTurn/0010_outline.png" id="58_lvpu8"]
+[ext_resource type="Texture2D" uid="uid://dirgua04e6spp" path="res://Sprites/PlayerSprites/ArcherRightTurn/0015_outline.png" id="59_iw8ov"]
+[ext_resource type="Texture2D" uid="uid://dla2d0sxkwa7q" path="res://Sprites/PlayerSprites/ArcherRightTurn/0020_outline.png" id="60_s5ecd"]
+[ext_resource type="Texture2D" uid="uid://c5xy03ssn1f8p" path="res://Sprites/PlayerSprites/ArcherRightTurn/0025_outline.png" id="61_6ccf0"]
+[ext_resource type="Texture2D" uid="uid://cbh5yp4p0aym2" path="res://Sprites/PlayerSprites/ArcherRightTurn/0030_outline.png" id="62_uh6ff"]
+[ext_resource type="Texture2D" uid="uid://c4r7j5xclr23c" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0001_outline.png" id="63_ihrpn"]
+[ext_resource type="Texture2D" uid="uid://8fmetvhlar04" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0005_outline.png" id="64_4rjh6"]
+[ext_resource type="Texture2D" uid="uid://blc2ty7b5dr63" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0010_outline.png" id="65_cq7w1"]
+[ext_resource type="Texture2D" uid="uid://cyhxig28ow5jw" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0015_outline.png" id="66_ho16k"]
+[ext_resource type="Texture2D" uid="uid://cv6u5ntlvxscd" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0020_outline.png" id="67_o712r"]
+[ext_resource type="Texture2D" uid="uid://bk7v285lhy6px" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0025_outline.png" id="68_hfnjl"]
+[ext_resource type="Texture2D" uid="uid://b64cfaect0dd7" path="res://Sprites/PlayerSprites/ArcherStandToCrouch/0030_outline.png" id="69_uxqhi"]
+[ext_resource type="Texture2D" uid="uid://m1xisxglnexs" path="res://Sprites/PlayerSprites/ArcherWalk/0001_outline.png" id="70_vbb78"]
+[ext_resource type="Texture2D" uid="uid://crmxmlwvlqt37" path="res://Sprites/PlayerSprites/ArcherWalk/0005_outline.png" id="71_7anab"]
+[ext_resource type="Texture2D" uid="uid://cjiaijng3q10f" path="res://Sprites/PlayerSprites/ArcherWalk/0010_outline.png" id="72_q7v0o"]
+[ext_resource type="Texture2D" uid="uid://swurr2nw6pbq" path="res://Sprites/PlayerSprites/ArcherWalk/0015_outline.png" id="73_gc6xv"]
+[ext_resource type="Texture2D" uid="uid://bbm7kseqd0e6p" path="res://Sprites/PlayerSprites/ArcherWalk/0020_outline.png" id="74_473p5"]
+[ext_resource type="Texture2D" uid="uid://bk1g1x8c0ho43" path="res://Sprites/PlayerSprites/ArcherWalk/0025_outline.png" id="75_yj2ec"]
+[ext_resource type="Texture2D" uid="uid://dpsjksn8tyj4r" path="res://Sprites/PlayerSprites/ArcherWalk/0030_outline.png" id="76_a1mwt"]
+[ext_resource type="Texture2D" uid="uid://ct4koheoyemjs" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0001_outline.png" id="77_f1uaf"]
+[ext_resource type="Texture2D" uid="uid://dv5jmodvhsqs1" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0005_outline.png" id="78_6hq81"]
+[ext_resource type="Texture2D" uid="uid://de8dvtsh8putf" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0010_outline.png" id="79_5cld6"]
+[ext_resource type="Texture2D" uid="uid://dxt3coa7vegeh" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0015_outline.png" id="80_o736f"]
+[ext_resource type="Texture2D" uid="uid://c60fcjx0lw7oc" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0020_outline.png" id="81_ketbw"]
+[ext_resource type="Texture2D" uid="uid://nq5hwboln5h4" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0025_outline.png" id="82_4grkl"]
+[ext_resource type="Texture2D" uid="uid://cd6a7vdiadq6x" path="res://Sprites/PlayerSprites/ArcherLegsIdle/0030_outline.png" id="83_6yrdb"]
+[ext_resource type="AudioStream" uid="uid://b1a5xr8ovkno3" path="res://Sounds/arrow_fire.mp3" id="90_isbcs"]
+[ext_resource type="AudioStream" uid="uid://jhw3iqcjqkk6" path="res://Sounds/bow_draw.mp3" id="91_isbcs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ue0p1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_f1uaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_6hq81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_5cld6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_o736f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ketbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_4grkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_6yrdb")
+}],
+"loop": true,
+"name": &"legs_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6yrdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ue0p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_isbcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_142e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ts2c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hcgbs")
+}],
+"loop": true,
+"name": &"legs_right_turn",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f350"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jsob3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pg0gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qavoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w4w4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h5cax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dj0x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f1uaf")
+}],
+"loop": true,
+"name": &"aim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_ramv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hseb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vinow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_awsf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_v84ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4pcjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3ath1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pgf6i")
+}],
+"loop": false,
+"name": &"arm_up",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6hq81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5cld6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o736f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ketbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4grkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6yrdb")
+}],
+"loop": true,
+"name": &"crouch_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ue0p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_isbcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_142e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ts2c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hcgbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mpfyg")
+}],
+"loop": false,
+"name": &"crouch_shoot",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_un823")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_aclic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0y64g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ramv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hseb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vinow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_awsf5")
+}],
+"loop": false,
+"name": &"crouch_to_stand",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_v84ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4pcjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3ath1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_pgf6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bvt37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kt3hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2jrev")
+}],
+"loop": true,
+"name": &"crouch_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_5j7nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_mrkcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_78kn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_nwtn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hl8o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_v8gx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_vlr8u")
+}],
+"loop": false,
+"name": &"draw",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_fip0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4tc2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_u5w1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fnpki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_14ki3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_uvwc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_t1r1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_s3u64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0cppb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_s2qaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_jr4hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_8h4oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_x8yfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_sg72k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_fjjiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_24pht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_lvpu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_iw8ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_s5ecd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_6ccf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_uh6ff")
+}],
+"loop": false,
+"name": &"right_turn",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_ihrpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_4rjh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_cq7w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ho16k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_o712r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_hfnjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_uxqhi")
+}],
+"loop": false,
+"name": &"stand_to_crouch",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_vbb78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_7anab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_q7v0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_gc6xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_473p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_yj2ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_a1mwt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5o4ln"]
+radius = 33.1361
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_wcnj3")
+player_movement_speed = 125.0
+player_crouched_movement_speed = 100.0
+rotation_speed = 10.0
+
+[node name="PlayerLegs" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ue0p1")
+animation = &"legs_right_turn"
+frame_progress = 0.508282
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0f350")
+animation = &"draw"
+autoplay = "idle"
+
+[node name="ArrowFiringPoint" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(74.5632, -516.724)
+scale = Vector2(4.6602, 4.65517)
+
+[node name="RavenLandingSpot" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(169.99997, 0)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -5)
+shape = SubResource("CircleShape2D_5o4ln")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.735, 1.735)
+rotation_smoothing_enabled = true
+
+[node name="FireArrow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("90_isbcs")
+volume_db = -5.0
+pitch_scale = 1.68
+
+[node name="BowDrawPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("91_isbcs")
+volume_db = -0.715
+pitch_scale = 1.35
+
+[node name="DrawTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="PivotPoint" type="Node2D" parent="."]
+
+[node name="RavenSpawnPoint" type="Marker2D" parent="PivotPoint"]
+position = Vector2(0, 4000)
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="DrawTimer" to="." method="_on_draw_timer_timeout"]
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://p6mxnqjvsel7"]
+
+[ext_resource type="AudioStream" uid="uid://bht54m8q44lmj" path="res://Sounds/forest-wind-with-birds-singing-364368.mp3" id="1_sm2tf"]
+
+[node name="AudioManager" type="Node2D"]
+
+[node name="ForestSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_sm2tf")
+autoplay = true
+bus = &"music"
+parameters/looping = true

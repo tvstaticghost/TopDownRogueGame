@@ -26,8 +26,6 @@ func _ready() -> void:
 	big_tree_array.append(BORDER_TREE_4)
 	
 	used_rect = border_map.get_used_rect().size
-	print(used_rect)
-	print("(Width, Height) : (%d, %d)" % [used_rect[0] - 1, used_rect[1] - 1])
 	
 	var rand_x_distance = 0
 	var rand_y_distance = 0

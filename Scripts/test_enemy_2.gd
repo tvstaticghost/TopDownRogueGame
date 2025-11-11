@@ -19,6 +19,8 @@ var current_enemy_state: enemy_states
 @onready var patrol_timer: Timer = $PatrolTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 const OUTLINE = "res://Shaders/outline.gdshader"
+@onready var hurt_box_critical: Area2D = $HurtBoxCritical
+@onready var hurt_box_normal: Area2D = $HurtBoxNormal
 
 @onready var hit_box: Area2D = $HitBox
 @onready var collision_polygon_2d: CollisionPolygon2D = $HitBox/CollisionPolygon2D
@@ -60,6 +62,8 @@ func _ready() -> void:
 	SignalManager.despawn_raven.connect(remove_outline)
 	SignalManager.arrow_hit.connect(arrow_hit)
 	
+	print(enemy_patrol_type)
+	
 func apply_outline(_target_position: Vector2):
 	var mat = ShaderMaterial.new()
 	mat.shader = load(OUTLINE)
@@ -94,6 +98,7 @@ func can_see_player():
 	return false
 
 func get_random_position() -> Vector2:
+	print('getting position')
 	var random_position
 	if enemy_patrol_type == patrol_type.MAPWIDE:
 		# Random anywhere within the map bounds
@@ -144,6 +149,7 @@ func navigate_to_point():
 func perform_patrol():
 	if can_see_player():
 		current_enemy_state = enemy_states.CHASE
+		enemy_visuals.render_chase()
 		return
 	else:
 		if can_hear_player: #This is jank as fuck
@@ -159,6 +165,7 @@ func perform_patrol():
 	navigate_to_point()
 	
 func generate_investigation_point():
+	#Adjust these settings, probably create export variables
 	var offset_x = randf_range(50.0, 200.0)
 	var offset_y = randf_range(50.0, 200.0)
 
@@ -189,6 +196,7 @@ func investigate():
 		
 	if can_see_player():
 		current_enemy_state = enemy_states.CHASE
+		enemy_visuals.render_chase()
 		return
 	if !navigation_agent_2d.is_target_reached() and not navigation_agent_2d.is_navigation_finished():
 		if enemy_visuals.animation != "run":
@@ -219,10 +227,11 @@ func investigate():
 					rotation = lerp_angle(rotation, random_rotation, rotation_speed)
 				else:
 					print('moving and rotating')
-					var random_time = randf_range(1.5, 3.0)
-					investigate_timer.wait_time = random_time
-					investigate_timer.start()
-					set_animation("idle")
+					
+				var random_time = randf_range(1.5, 3.0)
+				investigate_timer.wait_time = random_time
+				investigate_timer.start()
+				set_animation("idle")
 			else:
 				investigate_timer.stop()
 				is_investigating = false
@@ -337,9 +346,14 @@ func event_to_change_state(event: String):
 	if event == "hit" or event == "hear":
 		if current_enemy_state == enemy_states.PATROL:
 			current_enemy_state = enemy_states.INVESTIGATE
-			
+
+#TODO figure out a bug where when the knight is hit after already investigating the return point is not set
 func arrow_hit(arrow_position: Vector2):
 	print('Arrow hit enemy')
+	
+	if current_enemy_state != enemy_states.CHASE and current_enemy_state != enemy_states.ATTACK: 
+		enemy_visuals.render_alert()
+		
 	if is_investigating:
 		is_investigating = false
 		investigate_timer.stop()
@@ -385,7 +399,13 @@ func die():
 		
 	print("Knight is now dead")
 	dead = true
+	
+	#Disable the collisions and hit box/hurt box monitoring
 	collision_shape_2d.set_deferred("disabled", true)
+	hit_box.set_deferred("monitoring", false)
+	hurt_box_critical.set_deferred("monitoring", false)
+	hurt_box_normal.set_deferred("monitoring", false)
+	
 	enemy_visuals.play("die")
 	z_index = -1
 	nav_timer.stop()

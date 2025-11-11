@@ -51,7 +51,6 @@ func _ready() -> void:
 						spawn_tree(cell_position, true)
 					else:
 						spawn_tree(cell_position, false)
-					print("Adding a tree at (%d, %d)" % [width, height])
 					last_x_added = width
 				elif width == used_rect[0] - 1:
 					var cell_position = border_map.map_to_local(Vector2i(width, height))
@@ -59,7 +58,6 @@ func _ready() -> void:
 						spawn_tree(cell_position, true)
 					else:
 						spawn_tree(cell_position, false)
-					print("Adding a tree at (%d, %d)" % [width, height])
 		
 		if height == rand_y_distance:
 			rand_y_distance = height + randi_range(8, 10)
@@ -84,6 +82,4 @@ func spawn_tree(tree_position, first_row: bool):
 	
 	new_tree.material = shader_material
 	
-	print("Spawning tree at this position")
-	print(tree_position)
 	border_map.add_child(new_tree)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://b44g5fh1jvpdn"]
+[gd_scene load_steps=80 format=3 uid="uid://b44g5fh1jvpdn"]
 
 [ext_resource type="Texture2D" uid="uid://bvq03uvpnftic" path="res://Sprites/Knight/Knight_Idle/0001_outline.png" id="1_1yh4g"]
 [ext_resource type="Script" uid="uid://dfxcuelf72j0k" path="res://Scripts/test_enemy_2.gd" id="1_n3fn1"]
@@ -73,6 +73,8 @@
 [ext_resource type="Texture2D" uid="uid://d3vwtyl1u44bt" path="res://Sprites/Knight/Knight_Walk/0020_outline.png" id="43_yitdk"]
 [ext_resource type="Texture2D" uid="uid://c5sfm5ii5atpc" path="res://Sprites/Knight/Knight_Walk/0025_outline.png" id="44_2kh1m"]
 [ext_resource type="Texture2D" uid="uid://yjtxyfxi2j28" path="res://Sprites/Knight/Knight_Walk/0030_outline.png" id="45_sbgrx"]
+[ext_resource type="Script" uid="uid://lsvpjpbjfpcf" path="res://Scripts/enemy_visuals.gd" id="74_fhd25"]
+[ext_resource type="PackedScene" uid="uid://brtnp3iondw55" path="res://Scenes/visually_alerted.tscn" id="75_vonjv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvf1c"]
 animations = [{
@@ -291,7 +293,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"slash",
-"speed": 12.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -333,6 +335,7 @@ height = 252.65633
 [node name="test_enemy_2" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_n3fn1")
+enemy_patrol_type = 1
 enemy_vision_distance = 200.0
 
 [node name="KnightHealthManager" type="Node2D" parent="."]
@@ -341,9 +344,9 @@ script = ExtResource("2_kx8r5")
 
 [node name="EnemyVisuals" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yvf1c")
-animation = &"slash"
+animation = &"idle"
 autoplay = "idle"
-frame = 5
+script = ExtResource("74_fhd25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_37tg3")
@@ -384,6 +387,10 @@ position = Vector2(-89.99999, -24.999998)
 polygon = PackedVector2Array(214.99998, 69.99999, 414.99997, -24.999998, 469.99997, -194.99998, 394.99997, -309.99997, 684.99994, -309.99997, 809.99994, -104.99999, 599.99994, 34.999996)
 
 [node name="TransitionTimer" type="Timer" parent="."]
+
+[node name="VisuallyAlerted" parent="." instance=ExtResource("75_vonjv")]
+top_level = true
+position = Vector2(0, -200)
 
 [connection signal="animation_finished" from="EnemyVisuals" to="." method="_on_enemy_visuals_animation_finished"]
 [connection signal="timeout" from="NavTimer" to="." method="_on_nav_timer_timeout"]

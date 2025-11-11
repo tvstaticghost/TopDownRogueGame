@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://brtnp3iondw55"]
+
+[ext_resource type="Script" uid="uid://by8yjhrd15vp1" path="res://Scripts/visually_alerted.gd" id="1_4wp4f"]
+[ext_resource type="FontFile" uid="uid://dkdm26yo1f4kq" path="res://Fonts/MedievalSharp-Regular.ttf" id="1_jw30l"]
+
+[node name="VisuallyAlerted" type="Node2D"]
+script = ExtResource("1_4wp4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.515625, 0.484375)
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 23.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0.96862745, 0.60784316, 0.44705883, 1)
+theme_override_fonts/font = ExtResource("1_jw30l")
+theme_override_font_sizes/font_size = 50
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlertedTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="timeout" from="AlertedTimer" to="." method="_on_alerted_timer_timeout"]

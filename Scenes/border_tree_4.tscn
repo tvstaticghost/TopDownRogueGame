@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brwmfbh2t1mnr"]
+[gd_scene load_steps=5 format=3 uid="uid://brwmfbh2t1mnr"]
 
 [ext_resource type="Texture2D" uid="uid://dhm0n256fbsf8" path="res://Sprites/Environment/BorderTrees/border_tree4_outline.png" id="1_k5aek"]
 [ext_resource type="Script" uid="uid://bqrutjg7522dn" path="res://Scripts/border_tree.gd" id="2_yx3ns"]
+[ext_resource type="Texture2D" uid="uid://bci312s58b0th" path="res://Sprites/Environment/BorderTrees/branches_outline.png" id="3_1mph8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mph8"]
 radius = 172.95155
@@ -10,6 +11,11 @@ radius = 172.95155
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_k5aek")
 script = ExtResource("2_yx3ns")
+
+[node name="TreeTrunk" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.63953483, 0.60166836)
+texture = ExtResource("3_1mph8")
 
 [node name="FadeArea" type="Area2D" parent="." groups=["Tree"]]
 

@@ -36,9 +36,11 @@ position = Vector2(1176, 86)
 position = Vector2(11.000008, 146)
 
 [node name="JungleTree" parent="." instance=ExtResource("77_yv4qw")]
+visible = false
 position = Vector2(792, 369)
 
 [node name="OldTree" parent="." instance=ExtResource("78_vl2iv")]
+visible = false
 position = Vector2(233, 246)
 
 [node name="GroundTileMap" parent="." groups=["GroundTileMap"] instance=ExtResource("79_o16m1")]

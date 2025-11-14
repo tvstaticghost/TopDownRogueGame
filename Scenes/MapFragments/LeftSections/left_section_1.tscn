@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://dwl1n83o3olms"]
+[gd_scene load_steps=10 format=4 uid="uid://dwl1n83o3olms"]
 
+[ext_resource type="Script" uid="uid://dgqt4g8wplvhh" path="res://Scripts/left_section_1.gd" id="1_n3sjr"]
 [ext_resource type="Texture2D" uid="uid://bm8w6on0761vn" path="res://Sprites/Environment/Ground/dirt_patch_outline.png" id="1_rik3y"]
 [ext_resource type="Texture2D" uid="uid://b4cjmjauts7bo" path="res://Sprites/Environment/Ground/grass_texture_outline.png" id="2_5iy3s"]
 [ext_resource type="PackedScene" uid="uid://ddnla1pgm16h5" path="res://Scenes/area_test.tscn" id="3_5iy3s"]
@@ -2561,9 +2562,15 @@ texture = ExtResource("2_5iy3s")
 [sub_resource type="TileSet" id="TileSet_cew82"]
 sources/0 = SubResource("TileSetAtlasSource_4hyog")
 
-[node name="LeftSection1" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rik3y"]
+vertices = PackedVector2Array(1094, -94.07031, 1094, 390.0703, 2, 397.92188, 2, -101.921875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -112, -8, 408, 1104, 400, 1104, -104)])
 
-[node name="ConnectionPoint" type="Marker2D" parent="." groups=["ConnectionPoint"]]
+[node name="LeftSection1" type="Node2D" groups=["Level"]]
+script = ExtResource("1_n3sjr")
+
+[node name="ConnectionPoint" type="Marker2D" parent="." groups=["ConnectionPoint", "EasternConnection"]]
 position = Vector2(1072, 160)
 
 [node name="SpawnPoint" type="Marker2D" parent="." groups=["SpawnPoint"]]
@@ -2594,3 +2601,6 @@ position = Vector2(-8, 384)
 
 [node name="AreaTest4" parent="." instance=ExtResource("3_5iy3s")]
 position = Vector2(520, 384)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_rik3y")

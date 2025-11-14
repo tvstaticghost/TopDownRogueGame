@@ -2563,7 +2563,7 @@ sources/0 = SubResource("TileSetAtlasSource_4hyog")
 
 [node name="LeftSection2" type="Node2D"]
 
-[node name="ConnectionPoint" type="Marker2D" parent="." groups=["ConnectionPoint"]]
+[node name="ConnectionPoint" type="Marker2D" parent="." groups=["ConnectionPoint", "EasternConnection"]]
 position = Vector2(1072, 160)
 
 [node name="SpawnPoint" type="Marker2D" parent="." groups=["SpawnPoint"]]

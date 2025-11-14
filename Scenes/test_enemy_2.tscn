@@ -335,7 +335,6 @@ height = 252.65633
 [node name="test_enemy_2" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_n3fn1")
-enemy_patrol_type = 1
 enemy_vision_distance = 200.0
 
 [node name="KnightHealthManager" type="Node2D" parent="."]

@@ -35,6 +35,11 @@ HitBox=""
 Tree=""
 SpawnPoint=""
 ConnectionPoint=""
+EasternConnection=""
+WesternConnection=""
+SouthernConnection=""
+NorthernConnection=""
+UsedConnection=""
 
 [input]
 

@@ -50,7 +50,7 @@ noise_scalar = 0.24
 position = Vector2(478, 181)
 
 [node name="test_enemy_2" parent="." instance=ExtResource("9_oqgf2")]
-enemy_patrol_type = 2
+enemy_patrol_type = 1
 speed_increments = 0.5
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

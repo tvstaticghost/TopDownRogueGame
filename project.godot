@@ -40,6 +40,7 @@ WesternConnection=""
 SouthernConnection=""
 NorthernConnection=""
 UsedConnection=""
+CenterPiece=""
 
 [input]
 

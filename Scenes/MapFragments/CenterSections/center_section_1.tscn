@@ -2562,11 +2562,11 @@ texture = ExtResource("2_1ifc7")
 sources/0 = SubResource("TileSetAtlasSource_n42qj")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r2wbw"]
-vertices = PackedVector2Array(-346, -206, 182, -206, 182, 190, -346, 190, -346, 758, -750, 758, -750, 190, -742, -206, -1270, 190, -1270, -206, -346, -726, -742, -726)
+vertices = PackedVector2Array(-346, -206, 198, -206, 198, 190, -346, 190, -346, 774, -750, 774, -750, 190, -742, -206, -1286, 190, -1286, -206, -346, -742, -742, -742)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6, 7), PackedInt32Array(6, 8, 9, 7), PackedInt32Array(10, 0, 7, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1280, -216, -752, -216, -752, -736, -336, -736, -336, -216, 192, -216, 192, 200, -336, 200, -336, 768, -760, 768, -760, 200, -1280, 200, -1280, -208)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1280, -216, -752, -216, -752, -752, -336, -752, -336, -216, 208, -216, 208, 200, -336, 200, -336, 784, -760, 784, -760, 200, -1296, 200, -1296, -216)])
 
-[node name="CenterSection1" type="Node2D"]
+[node name="CenterSection1" type="Node2D" groups=["CenterPiece"]]
 
 [node name="ConnectionPoint1" type="Marker2D" parent="." groups=["ConnectionPoint", "EasternConnection"]]
 position = Vector2(192, 0)

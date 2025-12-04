@@ -4,3 +4,6 @@
 
 [node name="TestGeneratedLevel" type="Node2D"]
 script = ExtResource("1_gj8vq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.135, 0.135)

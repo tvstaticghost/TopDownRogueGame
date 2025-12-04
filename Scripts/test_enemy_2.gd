@@ -386,6 +386,7 @@ func _on_patrol_timer_timeout() -> void:
 func _on_nav_ready(bounds: Rect2):
 	initialize_everything()
 	map_bounds = bounds
+	print(map_bounds)
 	
 func _on_investigate_timer_timeout() -> void:
 	print('investigation timer went off')
